@@ -1,0 +1,101 @@
+@import "../../styles/variables.scss";
+
+.navbar {
+  width: 100%;
+  padding: 64px 32px 0;
+  justify-content: center;
+
+  &-logo {
+    align-items: center;
+
+    & > img {
+      width: 80px;
+      margin-top: -32px;
+      margin-right: 10px;
+    }
+
+    & > span {
+      color: $White;
+      font-size: 26px;
+      font-weight: bold;
+      text-shadow: 0 0 4px rgba($color: $Gold, $alpha: 0.5);
+
+      & > span {
+        color: $Magenta;
+        text-shadow: 0 0 4px rgba($color: $Magenta, $alpha: 0.5);
+      }
+    }
+  }
+
+  &-wrapper {
+    width: 100%;
+    max-width: 1280px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &-links {
+    & > a:not(:last-child) {
+      margin-right: 32px;
+    }
+  }
+
+  &-anchor-link {
+    letter-spacing: 2px;
+    font-size: 20px;
+    font-weight: bold;
+    color: $White;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      color: $Gold;
+    }
+  }
+
+  &-expand {
+    display: none;
+
+    & > svg {
+      color: $White;
+      font-size: 28px;
+      cursor: pointer;
+
+      &:hover {
+        color: $Gold;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .navbar {
+    &-links {
+      display: none !important;
+    }
+
+    &-expand {
+      display: block;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    &-logo {
+      & > img {
+        width: 72px;
+        margin-top: -24px;
+        margin-left: -16px;
+      }
+
+      & > span {
+        font-size: 24px;
+      }
+    }
+
+    &-links {
+      display: none !important;
+    }
+  }
+}

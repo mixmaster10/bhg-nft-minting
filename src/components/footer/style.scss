@@ -1,0 +1,109 @@
+@import "../../styles/variables.scss";
+
+.footer {
+  width: 100%;
+  padding: 64px calc((100vw - 1280px) / 2);
+  justify-content: space-around;
+  background-color: $Black-dark;
+
+
+  &-logo {
+    & > a {
+      height: 100%;
+
+      & > img {
+        margin-top: -16px;
+        width: 100px;
+      }
+    }
+  }
+
+  &-contacts {
+    align-items: center;
+
+    & > a {
+      color: $White;
+      text-decoration: none;
+
+      &:not(:last-child) {
+        margin-right: 32px;
+      }
+
+      & > svg {
+        font-size: 48px;
+        cursor: pointer;
+      }
+
+      &:hover {
+        color: $Gold;
+      }
+    }
+  }
+
+  &-email {
+    align-items: center;
+
+    & > a {
+      color: $White;
+      text-decoration: none;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .footer {
+    padding: 32px calc((100vw - 1280px) / 2);
+
+    &-contacts {
+      & > a {
+        &:not(:last-child) {
+          margin-right: 24px;
+        }
+
+        & > svg {
+          font-size: 32px;
+        }
+      }
+    }
+
+    &-email {
+      & > a {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 24px calc((100vw - 1280px) / 2);
+    flex-wrap: wrap;
+
+    &-logo {
+      & > a {
+        &:not(:last-child) {
+          margin-right: 16px;
+        }
+
+        & > img {
+          margin-top: -12px;
+          width: 72px;
+        }
+      }
+    }
+
+    &-contacts {
+      & > a {
+        & > svg {
+          font-size: 24px;
+        }
+      }
+    }
+
+    &-email {
+      & > a {
+        font-size: 12px;
+      }
+    }
+  }
+}

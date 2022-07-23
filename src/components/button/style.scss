@@ -1,0 +1,71 @@
+@import "../../styles/variables.scss";
+
+.button {
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bolder;
+  color: $White;
+  padding: 16px 24px;
+  min-width: fit-content;
+  background-color: $Purple;
+  box-shadow: 0 4px 16px rgba($color: $Black, $alpha: 0.15);
+  overflow: hidden;
+  cursor: pointer;
+
+  &::before {
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 300px;
+    transform: rotate(34deg);
+    top: -40px;
+    right: 50%;
+    content: " ";
+    background-color: rgba($color: $White, $alpha: 0.15);
+    z-index: 2;
+  }
+
+  &::after {
+    display: block;
+    position: absolute;
+    width: 70px;
+    height: 300px;
+    transform: rotate(34deg);
+    top: -80px;
+    right: calc(50% - 125px);
+    content: " ";
+    background-color: rgba($color: $White, $alpha: 0.15);
+    z-index: 2;
+  }
+
+  &:hover {
+    background-color: $Purple-dark;
+  }
+
+  & > svg {
+    margin-right: 16px;
+    animation: spin 1s infinite;
+  }
+
+  & > span {
+    z-index: 3;
+    white-space: nowrap;
+  }
+
+  & > a {
+    text-decoration: none;
+    color: $White;
+    white-space: nowrap;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,126 @@
+@import "../../styles/variables.scss";
+
+.hero {
+  width: 100%;
+  padding: 128px calc((100vw - 1280px) / 2) 0 calc((100vw - 1280px) / 2);
+
+  & > div {
+    padding: 0 64px;
+
+    & > img {
+      width: 100%;
+      height: stretch;
+      height: intrinsic;
+    }
+  }
+
+  &-wallet {
+    margin: 0 0 64px;
+    width: 100%;
+    padding: 0 64px;
+    align-items: center;
+    z-index: 2;
+
+    &-purchase {
+      width: 100%;
+      padding: 24px;
+      background-color: $Warning;
+      align-items: center;
+      justify-content: space-between;
+      border-radius: 16px;
+
+      &-ticker {
+        align-items: center;
+
+        & > span {
+          font-size: 24px !important;
+          font-weight: bold;
+          white-space: nowrap;
+
+          & > span {
+            color: $Magenta;
+          }
+        }
+
+        & > span {
+          font-size: 18px;
+          font-weight: bold;
+          margin-right: 24px;
+        }
+
+        &-counts {
+          font-size: 32px !important;
+        }
+
+        & > p {
+          max-width: 360px;
+          font-size: 20px;
+          text-align: center;
+          line-height: 24px;
+          font-weight: bold;
+        }
+      }
+
+      & > div {
+        border-radius: 100px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero {
+    & > div {
+      padding: 0 32px;
+    }
+
+    &-wallet {
+      padding: 0 32px;
+
+      &-purchase {
+        &-ticker {
+          flex-direction: column !important;
+
+          & > span {
+            white-space: normal;
+            text-align: center;
+          }
+
+          & > span {
+            margin: 0 0 12px;
+          }
+
+          & > p {
+            margin: 0;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    & > div {
+      padding: 0 8px;
+    }
+
+    &-wallet {
+      padding: 0 8px;
+
+      &-purchase {
+        padding: 16px;
+        flex-direction: column !important;
+
+        &-ticker {
+          margin-bottom: 32px;
+        }
+      }
+    }
+  }
+}
+
+.warning {
+  color: $Magenta;
+}

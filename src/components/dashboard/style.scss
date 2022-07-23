@@ -1,0 +1,52 @@
+@import "../../styles/variables.scss";
+
+.dashboard {
+  position: relative;
+  width: 100%;
+
+  &-expand-menu {
+    position: fixed;
+    width: 360px;
+    height: 100%;
+    right: -360px;
+    background-color: $Purple-light;
+    align-items: center;
+    padding: 128px 0 0;
+    z-index: 99;
+
+    &-close {
+      font-size: 36px;
+      color: $White;
+
+      & > svg {
+        cursor: pointer;
+
+        &:hover {
+          color: $Magenta;
+        }
+      }
+    }
+
+    & > a {
+      margin-top: 32px;
+    }
+  }
+
+  &-hero-wrapper {
+    width: 100%;
+    background-image: url("../../resources/CA_Background.jpg");
+  }
+}
+
+.expanded {
+  right: 0 !important;
+}
+
+@media (max-width: 425px) {
+  .dashboard {
+    &-expand-menu {
+      width: 100%;
+      right: -100%;
+    }
+  }
+}

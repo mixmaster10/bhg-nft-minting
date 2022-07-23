@@ -1,0 +1,74 @@
+@import "../../styles/variables.scss";
+
+.futureplans {
+  width: 100%;
+  padding: 64px calc((100vw - 1280px) / 2);
+  background-color: $Gold;
+
+  & > div {
+    width: calc(50% - 12px);
+    padding: 0 0 0 64px;
+    justify-content: center;
+    align-items: center;
+
+    & > img {
+      width: 90%;
+    }
+  }
+
+  & > p {
+    width: calc(50% - 12px);
+    color: $Black-dark;
+    font-size: 18px;
+    padding: 0 64px 0 0;
+    margin-left: 24px;
+
+    & > span {
+      font-size: 40px;
+      font-weight: bold;
+      color: $Black-dark;
+      margin-bottom: 16px;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .futureplans {
+    flex-direction: column !important;
+
+    & > div {
+      padding: 0 32px;
+      width: 100%;
+
+      & > img {
+        max-width: 450px;
+        height: stretch;
+        height: intrinsic;
+      }
+    }
+
+    & > p {
+      width: 100%;
+      padding: 0 32px;
+      margin-left: 0;
+    }
+  }
+}
+
+@media (max-width: 786px) {
+  .futureplans {
+    & > div {
+      padding: 0 8px;
+      width: 100%;
+    }
+
+    & > p {
+      width: 100%;
+      padding: 0 8px;
+
+      & > span {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,1 @@
+for FILE in `ls`; do mv $FILE `echo $FILE | sed -e 's/CAhooper0*/CAhooper/'`; done

@@ -1,0 +1,392 @@
+@import "../../styles/variables.scss";
+
+.rarity {
+  width: 100%;
+  padding: 10px calc((100vw - 1280px) / 2) 80px;
+  overflow: hidden;
+
+  & > div:not(:last-child) {
+    margin-top: 32px;
+  }
+
+  &-classes {
+    padding: 0 64px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+
+    & > div {
+      width: calc(20% - 12px);
+      align-items: center;
+
+      &:not(:last-child) {
+        margin-right: 16px;
+      }
+
+      & > span {
+        font-size: 24px;
+        font-weight: 600;
+        text-align: center;
+        margin-top: 12px;
+      }
+
+      & > img {
+        width: 100%;
+        border-radius: 16px;
+      }
+    }
+  }
+
+  &-ranking {
+    position: relative;
+    width: calc(50% - 64px);
+    padding-left: 64px;
+    margin-bottom: 0px;
+    font-size: 18px;
+
+    & > span {
+      font-size: 40px;
+      font-weight: bold;
+      margin-bottom: 24px;
+    }
+
+    & > div:not(:last-child) {
+      margin-bottom: 24px;
+    }
+
+    &-policy {
+      & > span {
+        & > span {
+          font-weight: bold;
+          margin-right: 8px;
+        }
+      }
+    }
+
+    & > img {
+      position: absolute;
+      width: 360px;
+      left: calc(100% + 48px);
+    }
+  }
+
+  &-ranking-comment {
+    position: relative;
+    width: calc(100% - 64px);
+    padding-left: 64px;
+    padding-top: 32px;
+    margin-bottom: 0px;
+    font-size: 24px;
+
+    & > span {
+      font-size: 40px;
+      font-weight: bold;
+      margin-bottom: 24px;
+    }
+
+    & > div:not(:last-child) {
+      margin-bottom: 24px;
+    }
+
+    &-policy {
+      & > span {
+        & > span {
+          font-weight: bold;
+          margin-right: 8px;
+        }
+      }
+    }
+
+    & > img {
+      position: absolute;
+      width: 360px;
+      left: calc(100% + 48px);
+    }
+  }
+
+
+  &-diagram {
+    width: 100%;
+    justify-content: center;
+
+    &-item {
+      width: 18%;
+      align-items: center;
+
+      &:not(:last-child) {
+        margin-right: 8px;
+      }
+
+      &-progress {
+        position: relative;
+        width: 100%;
+        height: 500px;
+        justify-content: flex-end;
+        margin-bottom: 8px;
+
+        & > div {
+          border-bottom: 2px solid rgba($color: $Black, $alpha: 0.7);
+          border-radius: 8px 8px 0 0;
+        }
+
+        &-bar {
+          &-bronze {
+            height: 30%;
+            background-color: $Bronze;
+            animation: expanding-bronze 2s ease-in-out 0.5s;
+          }
+
+          &-silver {
+            height: 40%;
+            background-color: $Silver;
+            animation: expanding-silver 2s ease-in-out 0.5s;
+          }
+
+          &-gold {
+            height: 50%;
+            background-color: $Gold;
+            animation: expanding-gold 2s ease-in-out 0.5s;
+          }
+
+          &-hof {
+            height: 70%;
+            background-color: $Purple;
+            animation: expanding-hof 2s ease-in-out 0.5s;
+          }
+
+          &-mastercard {
+            height: 100%;
+            background-color: $Magenta;
+            animation: expanding-mastercard 2s ease-in-out 0.5s;
+          }
+        }
+
+        &-comment {
+          position: absolute;
+          width: 100%;
+          color: rgba($color: $White, $alpha: 0.7);
+          text-align: center;
+        }
+      }
+
+      & > span {
+        font-size: 24px;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.bronze {
+  border: 2px solid $Bronze;
+  box-shadow: 0 1px 8px rgba($color: $Bronze, $alpha: 0.5);
+
+  & + span {
+    color: $Bronze;
+    text-shadow: 0 1px 4px rgba($color: $Bronze, $alpha: 0.5);
+  }
+}
+
+.silver {
+  border: 2px solid $Silver;
+  box-shadow: 0 1px 8px rgba($color: $Silver, $alpha: 0.5);
+
+  & + span {
+    color: $Silver;
+    text-shadow: 0 1px 4px rgba($color: $Silver, $alpha: 0.5);
+  }
+}
+
+.gold {
+  border: 2px solid $Gold;
+  box-shadow: 0 1px 8px rgba($color: $Gold, $alpha: 0.5);
+
+  & + span {
+    color: $Gold;
+    text-shadow: 0 1px 4px rgba($color: $Gold, $alpha: 0.5);
+  }
+}
+
+.hof {
+  border: 2px solid $Purple;
+  box-shadow: 0 1px 8px rgba($color: $Purple, $alpha: 0.5);
+
+  & + span {
+    color: $Purple;
+    text-shadow: 0 1px 4px rgba($color: $Purple, $alpha: 0.5);
+  }
+}
+
+.mastercard {
+  border: 2px solid $Magenta;
+  box-shadow: 0 1px 8px rgba($color: $Magenta, $alpha: 0.5);
+
+  & + span {
+    color: $Magenta;
+    text-shadow: 0 1px 4px rgba($color: $Magenta, $alpha: 0.5);
+  }
+}
+
+@keyframes expanding-bronze {
+  from {
+    height: 0%;
+  }
+
+  to {
+    height: 30%;
+  }
+}
+
+@keyframes expanding-silver {
+  from {
+    height: 0%;
+  }
+
+  to {
+    height: 40%;
+  }
+}
+
+@keyframes expanding-gold {
+  from {
+    height: 0%;
+  }
+
+  to {
+    height: 50%;
+  }
+}
+
+@keyframes expanding-hof {
+  from {
+    height: 0%;
+  }
+
+  to {
+    height: 70%;
+  }
+}
+
+@keyframes expanding-mastercard {
+  from {
+    height: 0%;
+  }
+
+  to {
+    height: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .rarity {
+    &-classes {
+      padding: 0 32px;
+
+      & > div {
+        & > span {
+          font-size: 14px;
+          margin-top: 8px;
+        }
+      }
+    }
+
+    &-ranking {
+      width: 100%;
+      padding-left: 0;
+      margin-bottom: 32px;
+      font-size: 18px;
+      padding: 0 32px;
+
+      & > span {
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      & > img {
+        left: 64px;
+        top: 100%;
+      }
+    }
+
+    &-diagram {
+      &-item {
+        & > span {
+          font-size: 20px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .rarity {
+    &-classes {
+      padding: 0 8px;
+    }
+
+    &-ranking {
+      font-size: 18px;
+      padding: 0 8px;
+
+      & > img {
+        width: 45%;
+        left: 32px;
+        top: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .rarity {
+    &-classes {
+      flex-wrap: wrap;
+      padding: 0 8px;
+
+      & > div {
+        width: calc(50% - 6px);
+
+        &:not(:last-child) {
+          margin: 3px;
+        }
+
+        & > span {
+          font-size: 16px;
+        }
+
+        & > img {
+          border-radius: 8px;
+        }
+      }
+    }
+
+    &-ranking {
+      & > span {
+        font-size: 40px;
+      }
+
+      & > img {
+        width: 240px;
+        left: 8px;
+        top: 100%;
+      }
+    }
+
+    &-diagram {
+      &-item {
+        &:not(:last-child) {
+          margin-right: 4px;
+        }
+
+        &-progress {
+          margin-bottom: 4px;
+        }
+
+        & > span {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,118 @@
+@import "../../styles/variables.scss";
+
+.roadmap {
+  width: 100%;
+  background-color: $Black-dark;
+  padding: 40px calc((100vw - 1280px) / 2);
+  color: $White;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+
+  &-decoration {
+    padding: 0 0px;
+    width: 100%;
+    justify-content: flex-end;
+
+    & > img {
+      width: 360px;
+    }
+  }
+
+  & > span {
+    width: 100%;
+    padding: 0 64px;
+    font-size: 72px;
+    font-weight: bold;
+    margin-top: -220px;
+    z-index: 2;
+  }
+
+  &-item {
+    width: 100%;
+    padding: 0 64px;
+    z-index: 2;
+
+    &:not(:last-child) {
+      margin-top: 32px;
+    }
+
+    &-percentage {
+      font-size: 40px;
+      font-weight: bold;
+    }
+
+    &-comment {
+      font-size: 20px;
+
+      & > a {
+        color: $Gold;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .roadmap {
+    &-decoration {
+      padding: 0 32px;
+
+      & > img {
+        width: 360px;
+      }
+    }
+
+    & > span {
+      padding: 0 32px;
+      margin-top: -180px;
+    }
+
+    &-item {
+      padding: 0 32px;
+
+      &:not(:last-child) {
+        margin-top: 24px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .roadmap {
+    &-decoration {
+      width: auto;
+      padding: 0 8px;
+
+      & > img {
+        width: 360px;
+      }
+    }
+
+    & > span {
+      margin-top: -16px;
+      padding: 0 8px;
+      font-size: 64px;
+    }
+
+    &-item {
+      padding: 0 8px;
+
+      &:not(:last-child) {
+        margin-top: 16px;
+      }
+
+      &-percentage {
+        font-size: 28px;
+      }
+
+      &-comment {
+        font-size: 18px;
+
+        & > a {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

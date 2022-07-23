@@ -1,0 +1,184 @@
+@import "../../styles/variables.scss";
+
+.minter {
+  width: 100%;
+  padding: 0 calc((100vw - 1280px) / 2);
+  background-color: $White-gray;
+
+  &-wrapper {
+    width: 100%;
+    color: $Purple;
+    font-weight: bold;
+    font-size: 40px;
+    justify-content: center;
+    text-align: center;
+    padding: 32px 0;
+
+    @media (max-width: 425px) {
+      flex-direction: column !important;
+      align-items: center;
+    }
+
+    & > input {
+      // border: 0px;
+      // border-radius: 100px;
+      font-size: 24px;
+      padding: 16px 24px;
+      width: 150px;
+      font-weight: bold;
+      margin-right: 24px;
+      -moz-appearance: textfield;
+
+      @media (max-width: 425px) {
+        margin: 0 0 24px 0;
+      }
+
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      @media (max-width: 768px) {
+        width: 100px;
+      }
+    }
+
+    & > div {
+      border-radius: 100px;
+    }
+  }
+
+  &-gallery {
+    height: 100%;
+    padding: 0 64px 32px 64px;
+
+    & > span {
+      font-size: 40px;
+      font-weight: bold;
+      color: $Black-dark;
+    }
+
+    &-show {
+      width: 100%;
+      padding: 24px;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      height: 100%;
+
+      &-item {
+        width: 240px;
+        min-height: 100%;
+        min-width: 220px;
+        border-radius: 8px;
+        overflow: hidden;
+        background-color: $Platinum;
+        box-shadow: 0 2px 8px rgba($color: $Black-dark, $alpha: 0.5);
+        padding: 4px;
+
+        &:not(:last-child) {
+          margin-right: 24px;
+        }
+
+        & > img {
+          width: 100%;
+          height: stretch;
+          border-radius: 6px;
+        }
+
+        &-info {
+          font-size: 16px;
+          font-weight: bold;
+          justify-content: center;
+
+          & > .name {
+            margin: 8px 0;
+            color: $Purple;
+            text-shadow: 0 1px 4px rgba($color: $Purple, $alpha: 0.5);
+          }
+        }
+      }
+    }
+  }
+
+  &-timer {
+    width: 100%;
+    color: $Magenta;
+    font-weight: bold;
+    font-size: 64px;
+    justify-content: center;
+    text-align: center;
+    padding: 32px 0;
+
+    & > div {
+      position: relative;
+      border-radius: 16px;
+      width: 96px;
+
+      &:not(:last-child) {
+        margin-right: 48px;
+      }
+
+      & > span {
+        font-size: 14px;
+        color: $Purple;
+      }
+    }
+
+    @media (max-width: 768px) {
+      font-size: 48px;
+
+      & > div {
+        width: 72px;
+
+        &:not(:last-child) {
+          margin-right: 32px;
+        }
+      }
+    }
+
+    @media (max-width: 425px) {
+      font-size: 40px;
+
+      & > div {
+        width: 64px;
+
+        &:not(:last-child) {
+          margin-right: 24px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .minter {
+    &-wrapper {
+      & > div {
+        font-size: 20px;
+      }
+    }
+
+    &-gallery {
+      padding: 16px 32px 32px 32px;
+    }
+
+    &-show {
+      padding: 16px 0;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .minter {
+    &-wrapper {
+      & > div {
+        font-size: 16px;
+      }
+    }
+
+    &-gallery {
+      padding: 8px 8px 32px 8px;
+    }
+  }
+}
